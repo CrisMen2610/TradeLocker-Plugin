@@ -2,16 +2,19 @@
   "name": "TradeLocker Plugin",
   "description": "A simple Chrome extension for demo.tradelocker.com",
   "version": "1.0",
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
   "manifest_version": 3,
   "action": {
     "default_popup": "popup.html"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://demo.tradelocker.com/es/trade"
-      ],
-      "js": ["content.js"]
-    }
+  "permissions":[
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://demo.tradelocker.com/es/trade",
+    "https://simul8or.com/"
   ]
 }
